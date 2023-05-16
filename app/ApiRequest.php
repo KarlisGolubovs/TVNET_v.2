@@ -151,13 +151,15 @@ class ApiRequest
     private function buildArticle(stdClass $article): Article
     {
         return new Article(
-            $this->buildUser($article->userId),
+            $this->fetchUser($article->userId),
             $article->id,
             $article->title,
             $article->body,
-            ''
+            'https://placehold.co/600x400/gray/white?text=Some+News'
         );
     }
+
+
 
     private function buildUser(stdClass $user): User
     {
