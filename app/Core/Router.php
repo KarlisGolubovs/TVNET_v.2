@@ -41,11 +41,9 @@ class Router
                     if (method_exists($controller, $action)) {
                         return $controller->$action($vars);
                     } else {
-                        // Handle invalid action error
                         return new View('notFound.twig', []);
                     }
                 } else {
-                    // Handle invalid controller error
                     return new View('notFound.twig', []);
                 }
         }
