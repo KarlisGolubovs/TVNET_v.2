@@ -86,7 +86,7 @@ class ApiRequest
         }
     }
 
-    public function fetchCommentsById(int $id): array
+    public function fetchCommentsByArticle(int $id): array
     {
         try {
             $cacheKey = 'comments_' . $id;
@@ -129,7 +129,7 @@ class ApiRequest
         }
     }
 
-    public function getSingleArticle(int $id): ?Article
+    public function fetchSingleArticle(int $id): ?Article
     {
         try {
             $cacheKey = 'article_' . $id;
@@ -151,10 +151,11 @@ class ApiRequest
     private function buildArticle(stdClass $article): Article
     {
         return new Article(
-            $this->fetchUser($article->userId),
+            $this->buildUser($article->userId),
             $article->id,
             $article->title,
             $article->body,
+            ''
         );
     }
 
