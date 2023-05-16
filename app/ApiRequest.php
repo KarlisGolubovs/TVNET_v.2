@@ -155,7 +155,7 @@ class ApiRequest
             $article->id,
             $article->title,
             $article->body,
-            'https://placehold.co/600x400/gray/white?text=Some+News'
+            'https://placehold.co/600x400/gray/white?text=FaKe+News'
         );
     }
 
