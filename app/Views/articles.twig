@@ -1,0 +1,19 @@
+{% if articles is empty %}
+    {% include 'notFound.twig' %}
+{% else %}
+    <div class="container mx-auto my-10 px-6">
+        <h1 class="text-3xl font-bold mb-8">Articles</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for article in articles %}
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <img src="{{ article.imageUrl }}" alt="Article Image" class="mb-4">
+                    <h2 class="text-xl font-bold mb-2">{{ article.title }}</h2>
+                    <p class="text-gray-600">{{ article.body }}</p>
+                    <p class="text-gray-500 mt-4">Author: {{ article.author.name }}</p>
+                    <a href="/article/{{ article.id }}" class="text-blue-500 mt-4 hover:text-blue-700">Read More</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

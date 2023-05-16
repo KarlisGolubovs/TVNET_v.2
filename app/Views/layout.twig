@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %}{% endblock %}News Feed</title>
+        <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    {% endblock %}
+</head>
+<body class="bg-slate-100">
+<div class="max-w-screen">
+    <!-- Header -->
+    <header class="flex items-center justify-between py-4 px-10 bg-[#61346B]">
+        <a href="/" class="text-white font-bold capitalize">Quite Useless News</a>
+        <span class="ml-10 text-white font-semibold text-sm">
+            <small>{{ 'now'|date('d-m-Y H:m:s') }}</small>
+        </span>
+        <ul class="md:inline-flex items-center">
+            <li class="px-2 md:px-4">
+                <a href="/" class="text-white font-semibold hover:text-black">Home</a>
+            </li>
+            <li class="px-2 md:px-4">
+                <a href="/articles" class="text-white font-semibold hover:text-black">Articles</a>
+            </li>
+            <li class="px-2 md:px-4">
+                <a href="/users" class="text-white font-semibold hover:text-black">Users</a>
+            </li>
+        </ul>
+    </header>
+
+    <div id="content" class="max-w-screen mx-20">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 py-4 px-10">
+        <div class="text-center text-gray-600">
+            &copy; {{ 'now'|date('Y') }} Quite Useless News Inc. All rights reserved.
+        </div>
+    </footer>
+</div>
+</body>
+</html>
