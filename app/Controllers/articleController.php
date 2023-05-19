@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\ApiRequest;
 use App\Core\View;
 
-class Controller
+class articleController
 {
     private ApiRequest $client;
 
@@ -13,18 +13,12 @@ class Controller
     {
         $this->client = new ApiRequest();
     }
+
     public function articles(): View
     {
         $articles = $this->client->fetchArticles();
 
         return new View('articles.twig', ['articles' => $articles]);
-    }
-
-    public function users(): View
-    {
-        $users = $this->client->fetchUsers();
-
-        return new View('users.twig', ['users' => $users]);
     }
 
     public function singleArticle(array $vars): View
@@ -39,19 +33,5 @@ class Controller
         $comments = $this->client->fetchCommentsByArticle($articleId);
 
         return new View('singleArticle.twig', ['article' => $article, 'comments' => $comments]);
-    }
-
-    public function user(array $vars): View
-    {
-        $userId = (int)implode('', $vars);
-        $user = $this->client->fetchUser($userId);
-
-        if (!$user) {
-            return new View('notFound.twig', []);
-        }
-
-        $articles = $this->client->fetchArticlesByUser($userId);
-
-        return new View('singleUser.twig', ['user' => $user, 'articles' => $articles]);
     }
 }

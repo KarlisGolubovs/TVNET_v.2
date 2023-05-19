@@ -10,11 +10,11 @@ class Router
     public static function route()
     {
         $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
-            $r->addRoute('GET', '/', ['App\Controllers\Controller', 'articles']);
-            $r->addRoute('GET', '/articles', ['App\Controllers\Controller', 'articles']);
-            $r->addRoute('GET', '/users', ['App\Controllers\Controller', 'users']);
-            $r->addRoute('GET', '/article/{id:\d+}', ['App\Controllers\Controller', 'singleArticle']);
-            $r->addRoute('GET', '/user/{id:\d+}', ['App\Controllers\Controller', 'user']);
+            $r->addRoute('GET', '/', ['App\Controllers\articleController', 'articles']);
+            $r->addRoute('GET', '/articles', ['App\Controllers\articleController', 'articles']);
+            $r->addRoute('GET', '/users', ['App\Controllers\articleController', 'users']);
+            $r->addRoute('GET', '/article/{id:\d+}', ['App\Controllers\articleController', 'singleArticle']);
+            $r->addRoute('GET', '/user/{id:\d+}', ['App\Controllers\articleController', 'user']);
         });
         $httpMethod = $_SERVER['REQUEST_METHOD'];
         $uri = $_SERVER['REQUEST_URI'];
