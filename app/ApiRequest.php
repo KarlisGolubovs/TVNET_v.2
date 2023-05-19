@@ -158,9 +158,6 @@ class ApiRequest
             'https://placehold.co/600x400/gray/white?text=FaKe+News'
         );
     }
-
-
-
     private function buildUser(stdClass $user): User
     {
         return new User(
