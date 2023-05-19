@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\ApiRequest;
 use App\Core\View;
 
-class commentControlller
+class commentController
 {
     private ApiRequest $client;
 
