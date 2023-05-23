@@ -9,7 +9,7 @@ use App\Repositories\Article\ArticleRepository;
 use App\Repositories\Comments\CommentRepository;
 use App\Services\Article\Show\ArticleService;
 
-class AppContainer
+class Container
 {
 private static ?Container $container = null;
 
