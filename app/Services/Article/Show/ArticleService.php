@@ -7,7 +7,4 @@ use App\Models\Article;
 class ArticleService
 {
 
-
-
-
 }

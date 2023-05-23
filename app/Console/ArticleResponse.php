@@ -67,7 +67,7 @@ class ArticleResponse
 
     private function renderComment(Comment $comment): void
     {
-        echo '[ Comment title ]: ' . $comment->getName() . PHP_EOL;
+        echo '[ Comments title ]: ' . $comment->getName() . PHP_EOL;
         echo '[ body ]: ' . $comment->getBody() . PHP_EOL;
         echo '[ author ]: ' . $comment->getEmail() . PHP_EOL;
         echo '__________________________________________________' . PHP_EOL;
