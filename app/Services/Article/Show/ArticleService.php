@@ -3,8 +3,6 @@
 namespace App\Services\Article\Show;
 
 use App\Models\Article;
-use App\Services\Article\Show\ArticleResponse;
-use App\Services\Article\Show\ArticleRequest;
 
 class ArticleService
 {

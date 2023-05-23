@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services\Article\Show\Article\Show;
+namespace App\Services\Article\Show;
 
-class ShowArticleRequest
+class ArticleRequest
 {
     private int $articleId;
     public function __construct(int $articleId)

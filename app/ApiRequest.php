@@ -155,7 +155,7 @@ class ApiRequest
             $article->id,
             $article->title,
             $article->body,
-            'https://placehold.co/600x400/gray/white?text=FaKe+News'
+            'https://placehold.co/600x400/gray/white?text=Fake+News'
         );
     }
     private function buildUser(stdClass $user): User
