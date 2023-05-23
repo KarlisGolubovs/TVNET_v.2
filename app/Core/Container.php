@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+namespace App\Core;
+
 use DI\Container;
 use DI\ContainerBuilder;
 use App\Repositories\User\UserRepository;
@@ -19,9 +21,9 @@ private static ?Container $container = null;
 if (self::$container === null) {
 $builder = new ContainerBuilder();
 
-// Configure dependencies
+
 $builder->addDefinitions([
-// Bind repositories
+
 UserRepository::class => DI\autowire(UserRepository::class),
 ArticleRepository::class => DI\autowire(ArticleRepository::class),
 CommentRepository::class => DI\autowire(CommentRepository::class),
