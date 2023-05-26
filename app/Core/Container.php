@@ -8,6 +8,7 @@ use App\Repositories\User\UserRepository;
 use App\Repositories\Article\ArticleRepository;
 use App\Repositories\Comments\CommentRepository;
 use App\Services\Article\Show\ArticleService;
+use Exception;
 
 class Container
 {
@@ -36,5 +37,5 @@ self::$container = $builder->build();
 }
 
 return self::$container;
-}
+    }
 }
