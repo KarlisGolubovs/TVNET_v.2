@@ -1,11 +1,15 @@
 <?php declare(strict_types=1);
 
+namespace App\Core;
+
 use mysql_xdevapi\DatabaseObject;
+use PDO;
+use PDOException;
 
 class Database
 {
     private string $host;
-    private stdClass $database;
+    private  $database;
     private DatabaseObject $username;
     private DatabaseObject $password;
     private $connection;

@@ -19,6 +19,11 @@ class Article
         $this->imageUrl = $imageUrl;
     }
 
+    public static function find(int $articleId)
+    {
+        // Todo: Write function body
+    }
+
     public function getUser(): User
     {
         return $this->user;
