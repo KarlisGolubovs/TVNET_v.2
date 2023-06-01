@@ -10,4 +10,6 @@ interface UserRepository
 
     public function fetchById(int $userId): ?User;
 
+    public function login(string $email, string $password);
+
 }
