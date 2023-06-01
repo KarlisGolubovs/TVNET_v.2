@@ -2,9 +2,17 @@
 
 namespace App\Core;
 
-
-
-class Redirect
+class Redirect implements Response
 {
+    private string $path;
 
+    public function __construct(string $path)
+    {
+        $this->path = $path;
+    }
+
+    public function fetchPath(): string
+    {
+        return $this->path;
+    }
 }
